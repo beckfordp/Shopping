@@ -15,7 +15,6 @@ public class ShoppingCalculator {
     public static final int MELON_PRICE_EACH = 50;
     public static final int LIME_PRICE_EACH = 15;
 
-
     Observable<String> basketObservable;
 
     public ShoppingCalculator(List<String> items) {
@@ -24,8 +23,7 @@ public class ShoppingCalculator {
 
     public Observable<Integer> totalPrice() {
         Observable<Integer> itemPriceObservable =
-            Observable.merge(applePriceEach(), bananaPriceEach(), melonPriceOffer(), limePriceOffer());
-
+            Observable.merge(applePriceEach(), bananaPriceEach(), melonPriceOffer(), limePriceOffer()).startWith(0);
         return itemPriceObservable.scan(this::sum);
     }
 
