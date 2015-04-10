@@ -23,7 +23,7 @@ public class ShoppingCalculator {
     public ShoppingCalculator(List<String> items) {
         basketObservable = Observable.from(items);
         totalPriceObservable = Observable.merge(applePriceEach(), bananaPriceEach(), melonPriceOffer(), limePriceOffer())
-                                        .startWith(0).scan(this::sum);
+                                        .scan(0, this::sum);
     }
 
     public Observable<Integer> totalPrice() {
