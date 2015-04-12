@@ -18,14 +18,14 @@ public class GenericCalculatorTest {
     }
 
     @Test
-    public void canCalculateThePriceOfItemsOfferBuyOneGetOneFree() {
+    public void canCalculateThePriceOfItemsOnOfferBuyOneGetOneFree() {
         List<BasketItem> basketOfMelons = Arrays.asList(BasketItem.Melon, BasketItem.Melon, BasketItem.Melon);
         GenericCalculator calc = new GenericCalculator(basketOfMelons);
         assertThat(BlockingObservable.from(calc.totalPrice()).last(), is(100));
     }
 
     @Test
-    public void canCalculateThePriceOfItemsOfferBuyThreeForThePriceOfTwo() {
+    public void canCalculateThePriceOfItemsOnOfferBuyThreeForThePriceOfTwo() {
         List<BasketItem> basketOfLimes = Arrays.asList(BasketItem.Lime, BasketItem.Lime, BasketItem.Lime, BasketItem.Lime);
         GenericCalculator calc = new GenericCalculator(basketOfLimes);
         assertThat(BlockingObservable.from(calc.totalPrice()).last(), is(45));
