@@ -11,4 +11,18 @@ Items are priced as follows:
 
 Given a list of shopping, calculate the total cost of those items.
 
+Two solutions are presented:
+
+ShoppingCalculator
+ - Uses observables, but otherwise is the simplest thing that can possibly work.
+
+ GenericCalculator
+ - Uses observables, but also abstracts away the offer associated with each item in a BasketItem object.
+
+ My submission is the ShoppingCalculator, just wanted to try something more challenging.
+ I'm new to Functional Reactive Programming (FRP). My real expertise is still Object Orientation.
+ I like the idea of being able to mix programming styles.
+
+
+
 
