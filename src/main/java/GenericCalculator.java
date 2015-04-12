@@ -14,7 +14,7 @@ public class GenericCalculator {
     }
 
     private Observable<Integer> offer_b3fp2() {
-        return basketObservable.filter((item) -> item.getOffer().equals(OfferEnum.BUY_THREE_FOR_THE_PRICE_OF_TWO)).buffer(3)
+        return basketObservable.filter((item) -> item.onOffer(OfferEnum.BUY_THREE_FOR_THE_PRICE_OF_TWO)).buffer(3)
                                .map((eachOffer) -> {
                                    Integer each = eachOffer.get(0).getUnitPrice();
                                    int count = eachOffer.size();
@@ -23,12 +23,12 @@ public class GenericCalculator {
     }
 
     private Observable<Integer> offer_b1g1f() {
-        return basketObservable.filter((item) -> item.getOffer().equals(OfferEnum.BUY_ONE_GET_ONE_FREE)).buffer(2)
+        return basketObservable.filter((item) -> item.onOffer(OfferEnum.BUY_ONE_GET_ONE_FREE)).buffer(2)
                                .map((eachOffer) -> eachOffer.get(0).getUnitPrice());
     }
 
     private Observable<Integer> each() {
-        return basketObservable.filter((item) -> item.getOffer().equals(OfferEnum.NONE)).map(BasketItem::getUnitPrice);
+        return basketObservable.filter((item) -> item.onOffer(OfferEnum.NONE)).map(BasketItem::getUnitPrice);
     }
 
     public Observable<Integer> totalPrice() {

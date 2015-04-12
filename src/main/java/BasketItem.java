@@ -17,8 +17,9 @@ public class BasketItem {
         return name;
     }
 
-    public OfferEnum getOffer() {
-        return offer;
+
+    public boolean onOffer(OfferEnum offer) {
+        return this.offer == offer;
     }
 
     public Integer getUnitPrice() {
