@@ -20,7 +20,7 @@ ShoppingCalculator
  - Uses observables, but also abstracts away the offer associated with each item in a BasketItem object.
 
  My submission is the ShoppingCalculator, just wanted to try something more challenging.
- I'm new to Functional Reactive Programming (FRP). My real expertise is still Object Orientation.
+ I'm new to Functional Reactive Programming (FRP). My real expertise is Object Orientation.
  I like the idea of being able to mix programming styles.
 
 
